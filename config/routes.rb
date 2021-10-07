@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   #teams
   get "teams/index", to: "teams#index"
+  get "teams/:id/players", to: "teams#players"
 end

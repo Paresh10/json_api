@@ -14,11 +14,13 @@ class TournamentsController < ApplicationController
 
         if @teams.length > 0
             render json: {
-                teams: @teams
+                teams: @teams,
+                message: "Here is the list of all #{@teams.count} teams."
             }   
         else 
             render json: {
                 message: "No Teams were found"
             }
+        end
     end
 end

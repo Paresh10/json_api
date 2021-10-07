@@ -9,4 +9,19 @@ class TeamsController < ApplicationController
         }
     end
 
+    def players
+        @players = Player.where(teams_id: params[:id])
+
+        if @players.length > 0 
+            render json: {
+                players: @players,
+                message: "The list of all #{@players.count} players"
+            }
+        else 
+            render json: {
+                message: "No players were found in this team"
+            }
+        end
+    end
+
 end

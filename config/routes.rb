@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   post "users/user_login", to: "users#user_login"
   post "users/create_user", to: "users#create_user"
   get "users/auto_login", to: "users#auto_login"
+
+
+  # Tournaments
+  get "tournaments/index", to: "tournaments#index"
 end

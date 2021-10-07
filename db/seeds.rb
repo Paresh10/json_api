@@ -5,4 +5,50 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create(name: "Paresh", email: "paresh.sharma10@gmail.com", password_digest: "paresh" )
+
+# For User's
+users = [
+    {
+        name: "Paresh",
+        email: "Paresh.sharma10@gmail.com",
+        password: "Paresh"
+    },
+    {
+        name: "Robert",
+        email: "robert@email.com",
+        password: "Robert"
+    }    
+]
+
+# For Tournaments
+stack_tournaments = [
+    {
+        name: "Dallas Boys",
+        city: "Dallas",
+        state: "TX",
+        start_date: "2021/10/22"
+    },
+    {
+        name: "Chicago Bulls",
+        city: "Chicago",
+        state: "IL",
+        start_date: "2021/01/02"
+    }    
+]
+
+users.each do |user|
+    User.create(
+        name: user[:name],
+        email: user[:email],
+        password: user[:password]
+    )
+end
+
+stack_tournaments.each do |t|
+  Tournament.create(
+    name: t[:name],
+    city: t[:city],
+    state: t[:state],
+    start_date: t[:start_date]    
+  )
+end

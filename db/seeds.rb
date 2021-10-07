@@ -54,7 +54,7 @@ teams = [
 
 
 users.each do |user|
-    User.create(
+    User.create!(
         name: user[:name],
         email: user[:email],
         password: user[:password]
@@ -62,12 +62,12 @@ users.each do |user|
 end
 
 stack_tournaments.each do |t|
-  Tournament.create(
+  Tournament.create!(
     name: t[:name],
     city: t[:city],
     state: t[:state],
     start_date: t[:start_date]    
-  )
+  ) 
 end
 
 
@@ -78,4 +78,4 @@ teams.each do |team|
         coach: team[:coach],
         tournaments_id: team[:tournaments_id]      
     )
-end
+end 

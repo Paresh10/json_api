@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
         @team = Team.all
 
         render json: {
-            teams: @teams,
+            teams: @team,
             message: "List for all #{@team.count} teams"
         }
     end

@@ -9,11 +9,16 @@ class TournamentsController < ApplicationController
         }
     end
 
-    # def teams
-    #     # @teams = Team
+    def teams
+        @teams = Team.where(tournaments_id: params[:id])
 
-    #     render json: {
-    #         teams: @teams
-    #     }
-    # end
+        if @teams.length > 0
+            render json: {
+                teams: @teams
+            }   
+        else 
+            render json: {
+                message: "No Teams were found"
+            }
+    end
 end

@@ -36,6 +36,23 @@ stack_tournaments = [
     }    
 ]
 
+# For Teams
+teams = [
+    {
+        name: "Austin",
+        age_group: "20-30",
+        coach: "Ron",
+        tournaments_id: 1
+    },
+    {
+        name: "Boston",
+        age_group: "15-20",
+        coach: "Reagan",
+        tournaments_id: 2
+    },   
+]
+
+
 users.each do |user|
     User.create(
         name: user[:name],
@@ -51,4 +68,14 @@ stack_tournaments.each do |t|
     state: t[:state],
     start_date: t[:start_date]    
   )
+end
+
+
+teams.each do |team|
+    Team.create!(
+        name: team[:name],
+        age_group: team[:age_group],
+        coach: team[:coach],
+        tournaments_id: team[:tournaments_id]      
+    )
 end

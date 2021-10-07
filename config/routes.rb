@@ -8,4 +8,8 @@ Rails.application.routes.draw do
 
   # Tournaments
   get "tournaments/index", to: "tournaments#index"
+  get "tournaments/:id/teams", to: "tournaments#teams"
+
+  #teams
+  get "teams/index", to: "teams#index"
 end

@@ -8,4 +8,12 @@ class TournamentsController < ApplicationController
             message: "Here is the list of all #{@tournaments.count} tournaments"
         }
     end
+
+    # def teams
+    #     # @teams = Team
+
+    #     render json: {
+    #         teams: @teams
+    #     }
+    # end
 end

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    # before_action :authorized
+    before_action :authorized unless [:logged_in_user]
 
     def create_user
         @user = User.create(user_params)
@@ -26,6 +26,7 @@ class UsersController < ApplicationController
                 user: @user,
                 token: token
             }
+            
         else
             render json: {error: "Invalid credentials"}
         end

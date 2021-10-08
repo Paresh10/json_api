@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-    #  before_action :authorized
+     before_action :authorized unless [:logged_in_user]
 
     def encode_token(payload)
         JWT.encode(payload, 'stack_sports_api')
